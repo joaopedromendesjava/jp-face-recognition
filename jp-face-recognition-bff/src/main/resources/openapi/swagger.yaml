@@ -1,0 +1,11 @@
+openapi: 3.1.1
+info:
+  title: Face Recognition API
+  version: 1.0.0
+  description:
+paths:
+  /test:
+    get:
+      responses:
+        '200':
+          description: OK
