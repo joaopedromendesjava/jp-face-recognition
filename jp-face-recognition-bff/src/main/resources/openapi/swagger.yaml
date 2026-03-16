@@ -14,6 +14,14 @@ paths:
       summary: register new face
       description: Returns info of register face
       operationId: registerFace
+      parameters:
+        - name: subject
+          in: query
+          required: true
+          description: identifier of subject
+          schema:
+            type: string
+            format: uuid
       requestBody:
         required: true
         content:
@@ -31,6 +39,10 @@ paths:
       responses:
         '201':
           description: Upload realized successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FaceResponse'
         '413':
           description: The file is too large. The maximum limit is 2MB.
         '415':
@@ -41,3 +53,19 @@ paths:
           description: Unprocessable Entity
         '500':
           description: Internal server error
+components:
+  schemas:
+    FaceResponse:
+      type: object
+      properties:
+        imageId:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        subject:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-44665544654"
+        createdAt:
+          type: string
+          format: date-time

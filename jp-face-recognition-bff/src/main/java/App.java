@@ -1,13 +1,11 @@
-package jp_face_recognition_bff;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JpFaceRecognitionBffApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpFaceRecognitionBffApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 }
