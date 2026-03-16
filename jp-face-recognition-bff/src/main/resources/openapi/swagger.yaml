@@ -3,9 +3,41 @@ info:
   title: Face Recognition API
   version: 1.0.0
   description:
+tags:
+  - name: Face
+    description: Operation for register and validation face
 paths:
-  /test:
-    get:
+  /face/register:
+    post:
+      tags:
+        - Face
+      summary: register new face
+      description: Returns info of register face
+      operationId: registerFace
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+                  description: The file of image (jpg, png)
+            encoding:
+              photo:
+                contentType: image/png, image/jpeg
       responses:
-        '200':
-          description: OK
+        '201':
+          description: Upload realized successfully
+        '413':
+          description: The file is too large. The maximum limit is 2MB.
+        '415':
+          description: This media type is not supported. Please use only JPG or PNG.
+        '400':
+          description: Bad request
+        '422':
+          description: Unprocessable Entity
+        '500':
+          description: Internal server error
