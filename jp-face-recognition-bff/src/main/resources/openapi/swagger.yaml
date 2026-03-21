@@ -42,7 +42,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FaceResponse'
+                $ref: '#/components/schemas/FaceResponseDTO'
         '413':
           description: The file is too large. The maximum limit is 2MB.
         '415':
@@ -55,7 +55,7 @@ paths:
           description: Internal server error
 components:
   schemas:
-    FaceResponse:
+    FaceResponseDTO:
       type: object
       properties:
         imageId:
