@@ -1,4 +1,4 @@
-package application.model;
+package face.recognition.application.model;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;

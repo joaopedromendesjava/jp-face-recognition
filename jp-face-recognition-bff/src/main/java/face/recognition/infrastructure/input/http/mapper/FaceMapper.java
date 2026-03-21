@@ -1,6 +1,6 @@
-package infrastructure.input.http.mapper;
+package face.recognition.infrastructure.input.http.mapper;
 
-import application.model.FaceResponse;
+import face.recognition.application.model.FaceResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
@@ -13,6 +13,7 @@ import java.util.Date;
 public interface FaceMapper {
 
     @Mapping(source = "createdAt", target = "createdAt", qualifiedByName = "mapToDate")
+    @Mapping(source = "imageId", target = "image_id")
     FaceResponseDTO toFaceRegisterDto(FaceResponse faceResponse);
 
     @Named("mapToDate")
@@ -22,5 +23,4 @@ public interface FaceMapper {
         }
         return Date.from(offsetDateTime.toInstant());
     }
-
 }

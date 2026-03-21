@@ -1,7 +1,7 @@
-package infrastructure.input.http.controller;
+package face.recognition.infrastructure.input.http.controller;
 
-import application.service.FaceService;
-import infrastructure.input.http.mapper.FaceMapper;
+import face.recognition.application.service.FaceService;
+import face.recognition.infrastructure.input.http.mapper.FaceMapper;
 import lombok.RequiredArgsConstructor;
 import org.openapitools.api.FaceApi;
 import org.openapitools.model.FaceResponseDTO;
@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.UUID;
 
 @Controller
